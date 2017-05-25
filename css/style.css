@@ -1,0 +1,44 @@
+#game-board {
+  background: #3582b8;
+  border-radius: 4px;
+  padding: 10px;
+  width: 600px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+}
+
+.cell {
+  background: rgba(225, 226, 241, 0.5);
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 50px;
+  float: left;
+  margin: 10px;
+  width: 50px;
+}
+
+
+#myBoat {
+  background-color: red;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
+
+#enemyBoat {
+  background-color: green;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
