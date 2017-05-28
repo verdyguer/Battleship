@@ -5,23 +5,45 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link href="css/reset.css" type="text/css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div id="game-board">
+  <header>
+    <div class="container-fluid">
+      <h1> Battleship Game </h1>
+    </div>
+  </header>
 
-
+  <div class="main container">
+    <section class="main row">
+      <board class="col-xs-12 col-sm-9">
+         <div id="game-board"></div>
+         <div class="clearfix visible-sm-block"></div>
+      </board>
+      
+      <aside class="col-xs-12 col-sm-3">
+        <p>Aqui va el dashborad</p>
+      </aside>
+      <div class="clearfix visible-sm-block"></div>
+    </section>
   </div>
-  <div class="clearfix">
+  
+  <footer>
+    <div class="container">
+      <h3>By Mario</h3>
+    </div>
+  </footer>
 
-  </div>
-
+  <script scr="js/jsquery.js"></script>
+  <script scr="js/bootstrap.min.js"></script>
   <script src="js/boat.js"></script>
   <script src="js/manager.js"></script>
   <script src="js/app.js"></script>
-  
+
 </body>
 
 

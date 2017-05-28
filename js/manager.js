@@ -2,8 +2,8 @@
 function Battleship() {
   var x = Math.floor(Math.random() * (8 - 0)) + 0;
   var y = Math.floor(Math.random() * (8 - 0)) + 0;
-  this.enemyBoat = new Boat([x,y],"N","HMS Queen I")
-  this.myBoat =  new Boat ([0,0],"N", "La Invencible")
+  this.enemyBoat = new Boat([x,y],"N","AlienShip")
+  this.myBoat =  new Boat ([5,5],"N", "La Invencible")
 }
 
 Battleship.prototype._drawBoard = function () {
