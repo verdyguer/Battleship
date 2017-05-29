@@ -47,7 +47,6 @@ footer{
   background-image: url("./images/myboat.png");
   background-position: center;
   background-size: 100% 100%;
-  /*background-color: red;*/
   border-radius: 4%;
   box-sizing: border-box;
   height: 50px;
@@ -59,7 +58,6 @@ footer{
   background-image: url("./images/AlienShip.jpg");
   background-position: center;
   background-size: 100% 100%;
-  background-color: green;
   border-radius: 4%;
   box-sizing: border-box;
   height: 50px;
