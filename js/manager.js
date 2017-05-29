@@ -53,7 +53,7 @@ Battleship.prototype._ping = function () {
       console.log("fire");
     } 
     } else{
-    
+
       console.log("la maquina juega");
   }
 }
