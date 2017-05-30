@@ -4,6 +4,7 @@ window.onload = function () {
   battleShip = new Battleship();
   battleShip._drawBoard();
   battleShip._drawBoats();
+  // battleShip._drawPing();
 
   document.addEventListener("keydown", moveKeys);
 
