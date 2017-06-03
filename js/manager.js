@@ -76,8 +76,9 @@ Battleship.prototype._drawPingRed = function () {
       $("." + (x + i) + "-" + (y + j)).attr("id", "pingRed")
     }
   }
+   this._selecTarget()
+  }
 
-}
 
 Battleship.prototype._drawPingYellow = function () {
   var x = this.myBoat.position[0];
@@ -85,10 +86,29 @@ Battleship.prototype._drawPingYellow = function () {
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
       $("." + (x + i) + "-" + (y + j)).addClass("pingYellow")
-     
+
     }
   }
-  setInterval(function(){ 
-    $(".pingYellow").removeClass("pingYellow"); }, 3000);
+  setInterval(function () {
+    $(".pingYellow").removeClass("pingYellow");
+  }, 2000);
 }
 
+
+
+Battleship.prototype._selecTarget = function () {
+  var v = this.enemyBoat.position[0];
+  var z = this.enemyBoat.position[1];
+  var that = this;
+
+  var x = document.querySelectorAll("#pingRed");
+
+  $(x).click(function (event) {
+  if (this.classList[1] ===(v+"-"+z)) {
+    console.log ("hit");
+  } else {
+    console.log("la maquina juega")
+  }
+  })
+
+}

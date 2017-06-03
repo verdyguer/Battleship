@@ -22,5 +22,6 @@ window.onload = function () {
       case 40: battleShip.myBoat.move("b"); break;
     }
   }
+  
 }
 
