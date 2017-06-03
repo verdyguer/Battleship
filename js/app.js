@@ -9,7 +9,7 @@ window.onload = function () {
   document.addEventListener("keydown", moveKeys);
 
   function moveKeys(event) {
-    var keys = [37, 38, 39, 40];
+    var keys = [37, 38, 39, 40,13];
 
     if (keys.indexOf(event.keyCode) < 0) {
       return;
@@ -20,6 +20,7 @@ window.onload = function () {
       case 37: battleShip.myBoat.move("l"); break;
       case 39: battleShip.myBoat.move("r"); break;
       case 40: battleShip.myBoat.move("b"); break;
+      case 13: battleShip.ping(); break;
     }
   }
   

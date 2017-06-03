@@ -39,7 +39,7 @@ Battleship.prototype._drawBoats = function () {
 
 }
 
-Battleship.prototype._ping = function () {
+Battleship.prototype.ping = function () {
   var x = this.myBoat.position[0];
   var y = this.myBoat.position[1];
   var v = this.enemyBoat.position[0];
@@ -109,6 +109,11 @@ Battleship.prototype._selecTarget = function () {
   } else {
     console.log("la maquina juega")
   }
-  })
+})
+
+Boat.prototype.sonar = function(){
+Battleship.prototype._
+}
+
 
 }
