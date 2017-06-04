@@ -1,4 +1,7 @@
 
+
+
+
 function Battleship() {
   var x = Math.floor(Math.random() * (9 - 0)) + 0;
   var y = Math.floor(Math.random() * (9 - 0)) + 0;
@@ -50,7 +53,7 @@ Battleship.prototype.ping = function () {
     this._drawPingRed();
   } else {
     this._drawPingYellow();
-    console.log("la maquina juega");
+    console.log("enemy Play")
   }
 }
 
@@ -76,8 +79,9 @@ Battleship.prototype._drawPingRed = function () {
       $("." + (x + i) + "-" + (y + j)).attr("id", "pingRed")
     }
   }
-   this._selecTarget()
-  }
+  this._selecTarget();
+  this._fireGun();
+}
 
 
 Battleship.prototype._drawPingYellow = function () {
@@ -88,12 +92,12 @@ Battleship.prototype._drawPingYellow = function () {
       $("." + (x + i) + "-" + (y + j)).addClass("pingYellow")
 
     }
+    setInterval(function () {
+      $(".pingYellow").removeClass("pingYellow");
+    }, 3000);
   }
-  setInterval(function () {
-    $(".pingYellow").removeClass("pingYellow");
-  }, 2000);
+  this._playWater();
 }
-
 
 
 Battleship.prototype._selecTarget = function () {
@@ -104,16 +108,40 @@ Battleship.prototype._selecTarget = function () {
   var x = document.querySelectorAll("#pingRed");
 
   $(x).click(function (event) {
-  if (this.classList[1] ===(v+"-"+z)) {
-    console.log ("hit");
-  } else {
-    console.log("la maquina juega")
-  }
-})
+    if (this.classList[1] === (v + "-" + z)) {
+      alert("You have save the wold from an alien invasion");
+    } else {
+       Battleship._enemyPhoto();
+      console.log("EnemyPlay"); 
+    }
+  })
+}
+Battleship.prototype._playWater = function () {
 
-Boat.prototype.sonar = function(){
-Battleship.prototype._
+  var photo = document.getElementsByClassName("playWater");
+  document.getElementById("screen").src = "./css/images/agua.gif";
+  setTimeout(function () {
+    document.getElementById("screen").src = "./css/images/AlienShip.jpg";
+  }, 4500);
+}
+
+Battleship.prototype._fireGun = function () {
+
+  var photo = document.getElementsByClassName("playWater");
+  document.getElementById("screen").src = "./css/images/671.gif";
+  setTimeout(function () {
+    document.getElementById("screen").src = "./css/images/AlienShip.jpg";
+  }, 4500);
+}
+
+Battleship.prototype._enemyPhoto = function () {
+
+  var photo = document.getElementsByClassName("playWater");
+  document.getElementById("screen").src = "./css/images/AlienShip.jpg";
+  setTimeout(function () {
+    document.getElementById("screen").src = "./css/images/672.gif";
+  }, 4500);
 }
 
 
-}
+

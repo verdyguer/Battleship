@@ -15,10 +15,12 @@ Boat.prototype.move = function(rumbo){
   else if (rumbo==="b"){
     this._goBack();
     this._reDrawBoat();
+    
   }
   else if (rumbo==="l"){
     this._goLeft();
     this._reDrawBoat();
+   
   }
   else if (rumbo==="r"){
     this._goRight();
@@ -65,5 +67,5 @@ Boat.prototype._reDrawBoat = function(){
   var cell = $("." + x + "-" + y);
   
   cell.attr("id", "myBoat")
-  
+   
 }

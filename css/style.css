@@ -74,6 +74,18 @@ footer{
   margin: 10px;
   width: 50px;
 }
+.pingOrange{
+  background-color: #ffa500;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
+
+
 
 #pingRed{
   background-color: red;
@@ -85,8 +97,39 @@ footer{
   margin: 10px;
   width: 50px;
 }
+#pingGreen{
+  background-color: greenyellow;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
 
 
+.playWater{
+  background-image: url("./images/myBoat.gif");
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 200px;
+  margin: 1px;
+  width: 400px;
+}
+
+#screen{
+  background-image: url("./images/myBoat.jpeg");
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 4%;
+  box-sizing: border-box;
+  height: 200px;
+  margin: 10px;
+  width: 400px;
+}
 
 /*
 Plaleta de colores
