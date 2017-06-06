@@ -111,18 +111,27 @@ Battleship.prototype._selecTarget = function () {
     if (this.classList[1] === (v + "-" + z)) {
       alert("You have save the wold from an alien invasion");
     } else {
-       Battleship._enemyPhoto();
-      console.log("EnemyPlay"); 
+      that._enemyPhoto();
+      setTimeout(function () {
+        ;
+      }, 4500);
+
+      console.log("EnemyPlay");
     }
   })
 }
 Battleship.prototype._playWater = function () {
-
+  var that = this;
   var photo = document.getElementsByClassName("playWater");
   document.getElementById("screen").src = "./css/images/agua.gif";
   setTimeout(function () {
     document.getElementById("screen").src = "./css/images/AlienShip.jpg";
   }, 4500);
+  setTimeout(function () {
+    var enemyplay = new Enemyplay(that);
+    enemyplay._pingEnemy();
+  }, 6500);
+
 }
 
 Battleship.prototype._fireGun = function () {

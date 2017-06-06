@@ -1,17 +1,14 @@
 // <------- EnemyPlay--------->
 
-function Enemyplay(position) {
-  var q = Math.floor(Math.random() * (9 - 0)) + 0;
-  var w = Math.floor(Math.random() * (9 - 0)) + 0;
-  this.enemyFire = new Fire(q,w) 
+function Enemyplay(battleShip) {
+  this.x = battleShip.myBoat.position[0];
+  this.y = battleShip.myBoat.position[1];
+  this.q = Math.floor(Math.random() * (9 - 0)) + 0;
+  this.w = Math.floor(Math.random() * (9 - 0)) + 0;
 }
 
 Enemyplay.prototype._pingEnemy = function () {
-  var x = this.myBoat.position[0];
-  var y = this.myBoat.position[1];
-
-  console.log(q, w);
-  if ((q === x || q === x - 1 || q === x + 1) && (w === y || w === y - 1 || w === y + 1)) {
+  if ((this.q === this.x || this.q === this.x - 1 || this.q === this.x + 1) && (this.w === this.y || this.w === this.y - 1 || this.w === this.y + 1)) {
     this._drawPingGreen();
   } else {
     this._drawPingOrange();
@@ -19,30 +16,44 @@ Enemyplay.prototype._pingEnemy = function () {
   }
 }
 Enemyplay.prototype._drawPingGreen = function () {
-  var x = this.myBoat.position[0];
-  var y = this.myBoat.position[1];
+ 
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
-      $("." + (x + i) + "-" + (y + j)).attr("id", "pingGreen")
+      $("." + (this.x + i) + "-" + (this.y + j)).attr("id", "pingGreen")
     }
   }
-  this._selecTarget();
+  this._fireEnemy();
 }
 
 Enemyplay.prototype._drawPingOrange = function () {
-  var q = this.myBoat.position[0];
-  var w = this.myBoat.position[1];
+
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
-      $("." + (x + i) + "-" + (y + j)).addClass("pingOrange");
+      $("." + (this.q + i) + "-" + (this.w + j)).addClass("pingOrange");
 
     }
     setInterval(function () {
       $(".pingOrange").removeClass("pingOrange");
     }, 2000);
   }
-  console.log("efecto disparo enemigo");
+  console.log("tu turno");
 }
 
 
 
+
+Enemyplay.prototype._selecTarget = function () {
+
+  var that = this;
+
+  var x = document.querySelectorAll("#pingGreen");
+
+  $(x).click(function (event) {
+    if (this.classList[1] === (this.x + "-" + this.y)) {
+      alert("You lost");
+    } else {
+  
+      console.log("your tuen");
+    }
+  })
+}
