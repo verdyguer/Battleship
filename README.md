@@ -1,4 +1,7 @@
 README
+
+https://verdyguer.github.io/Battleship/
+
 El juego consiste en encontrar la nave alienígena sumergida y hundirla.
 
 -El jugador puede moverse por el tablero con las fechas de dirección.
