@@ -131,6 +131,11 @@ footer{
   width: 400px;
 }
 
+#consola{
+  font-size: 50px;
+  color:red;
+}
+
 /*
 Plaleta de colores
 .color-1 {color: #143a7b;}

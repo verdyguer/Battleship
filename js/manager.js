@@ -14,9 +14,9 @@ function Battleship() {
 Battleship.prototype._drawBoard = function () {
   var picBoard = "";
 
-  for (i = 0; i < 9; i++) {
+  for (i = 0; i < 8; i++) {
     picBoard = picBoard + "<div class ='row'>";
-    for (j = 0; j < 9; j++) {
+    for (j = 0; j < 8; j++) {
       picBoard = picBoard + "<div class ='cell " + i + "-" + j + "'></div>"
     }
     picBoard = picBoard + "</div>";
@@ -36,9 +36,7 @@ Battleship.prototype._drawBoats = function () {
   var v = this.enemyBoat.position[0];
   var z = this.enemyBoat.position[1];
 
-  var cell = $("." + v + "-" + z);
 
-  cell.attr("id", "enemyBoat")
 
 }
 
@@ -81,6 +79,10 @@ Battleship.prototype._drawPingRed = function () {
       $(".pingRed").removeClass("pingRed");
     }, 3000);
   }
+   document.getElementById("consola").innerHTML = "It´s your opportunity to demostrate who own this planet";
+     setTimeout(function () {
+    document.getElementById("consola").innerHTML= "";
+  }, 3000);
   this._selecTarget();
 
 
@@ -94,8 +96,8 @@ Battleship.prototype._drawPingYellow = function () {
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
       snd.play();
-    snd.currentTime = 0
-        $("." + (x + i) + "-" + (y + j)).addClass("pingYellow");
+      snd.currentTime = 0
+      $("." + (x + i) + "-" + (y + j)).addClass("pingYellow");
     }
     setInterval(function () {
       $(".pingYellow").removeClass("pingYellow");
@@ -116,6 +118,9 @@ Battleship.prototype._selecTarget = function () {
     that._fireGun();
 
     if (this.classList[1] === (v + "-" + z)) {
+
+      var cell = $("." + v + "-" + z);
+      cell.attr("id", "enemyBoat")
       alert("You have save the world from an alien invasion");
       location.reload();
     } else {
@@ -155,7 +160,7 @@ Battleship.prototype._fireGun = function () {
   var photo = document.getElementsByClassName("playWater");
   document.getElementById("screen").src = "./css/images/671.gif";
   snd1.play();
-  snd1.currentTime = 0
+  snd1.currentTime = 1
   setTimeout(function () {
     document.getElementById("screen").src = "./css/images/AlienShip.jpg";
   }, 4500);

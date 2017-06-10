@@ -23,6 +23,10 @@ Enemyplay.prototype._pingEnemy = function () {
   } else {
     this._drawPingOrange();
     console.log("tu turno");
+    document.getElementById("consola").innerHTML = "Lucky guy! Aliens have not find you";
+     setTimeout(function () {
+    document.getElementById("consola").innerHTML= "";
+  }, 3000);
   }
 }
 Enemyplay.prototype._drawPingGreen = function () {
@@ -33,7 +37,7 @@ Enemyplay.prototype._drawPingGreen = function () {
     }
     setInterval(function () {
       $(".pingGreen").removeClass("pingGreen");
-    }, 5000);
+    }, 6000);
   }
   this._fireEnemy();
 
@@ -54,6 +58,7 @@ Enemyplay.prototype._drawPingOrange = function () {
     document.getElementById("screen").src = "./css/images/myBoat.jpeg";
   }, 3000);
   console.log("tu turno");
+  document.getElementById("consola").innerHTML = "Lucky guy! Aliens have not find you";
 }
 
 Enemyplay.prototype._fireEnemy = function () {
@@ -63,7 +68,7 @@ Enemyplay.prototype._fireEnemy = function () {
     document.getElementById("screen").src = "./css/images/myBoat.jpeg";
   }, 6000);
 
-  // var that = this;
+  var that = this;
 
   var choose = document.querySelectorAll("#pingGreen");
   var objetive = choose[Math.floor(Math.random() * choose.length)];
@@ -71,6 +76,7 @@ Enemyplay.prototype._fireEnemy = function () {
 
   if (objetive.classList[1] === (this.x + "-" + this.y)) {
     alert("You lost");
+    location.reload();
   } else {
     console.log("your turn");
   }
@@ -114,6 +120,7 @@ Enemyplay2.prototype._fireEnemy = function () {
     alert("You lost");
   } else {
     console.log("your turn");
+    document.getElementById("consola").innerHTML = "It´s your opportunity to demostrate who own this planet";
   }
 
 }
