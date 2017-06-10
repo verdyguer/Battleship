@@ -116,13 +116,13 @@ Battleship.prototype._selecTarget = function () {
     that._fireGun();
 
     if (this.classList[1] === (v + "-" + z)) {
-      alert("You have save the wold from an alien invasion");
+      alert("You have save the world from an alien invasion");
       location.reload();
     } else {
-      var enemyplay = new Enemyplay(that);
+      var enemyplay = new Enemyplay2(that);
       setTimeout(function () {
         enemyplay._enemyPhoto();
-        
+
       }, 4500);
 
 
