@@ -97,7 +97,7 @@ footer{
   margin: 10px;
   width: 50px;
 }
-#pingGreen{
+.pingGreen{
   background-color: greenyellow;
   background-position: center;
   background-size: 100% 100%;

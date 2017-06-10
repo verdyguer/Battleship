@@ -33,11 +33,11 @@ Enemyplay.prototype._drawPingGreen = function () {
 
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
-      $("." + (this.x + i) + "-" + (this.y + j)).attr("id", "pingGreen")
+      $("." + (this.x + i) + "-" + (this.y + j)).addClass("pingGreen")
     }
     setInterval(function () {
-      $("#pingGreen").removeClass("pingGreen");
-    }, 2000);
+      $(".pingGreen").removeClass("pingGreen");
+    }, 5000);
   }
   this._fireEnemy();
 
@@ -65,15 +65,18 @@ Enemyplay.prototype._drawPingOrange = function () {
 
 Enemyplay.prototype._fireEnemy = function () {
   
-document.getElementById("screen").src = "./css/images/aliesnAttack.gif";
+document.getElementById("screen").src = "./css/images/aliensAttack.gif";
   setTimeout(function () {
     document.getElementById("screen").src = "./css/images/myBoat.jpeg";
   }, 6000);
 
-  var that = this;
+  // var that = this;
 
-  var x = document.querySelectorAll("#pingGreen");
-    if (this.classList[1] === (this.x + "-" + this.y)) {
+  var choose = document.querySelectorAll("#pingGreen");
+  var objetive = choose[Math.floor(Math.random()*choose.length)];
+  console.log(this.x,this.y)
+
+    if (objetive === (this.x + "-" + this.y)) {
       alert("You lost");
     } else {
 

@@ -122,6 +122,7 @@ Battleship.prototype._selecTarget = function () {
       var enemyplay = new Enemyplay(that);
       setTimeout(function () {
         enemyplay._enemyPhoto();
+        
       }, 4500);
 
 
@@ -144,7 +145,7 @@ Battleship.prototype._playWater = function () {
   setTimeout(function () {
     var enemyplay = new Enemyplay(that);
     enemyplay._enemyPhoto();
-  }, 6500);
+  }, 4500);
 
 }
 
